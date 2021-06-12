@@ -1,7 +1,12 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 
 const Counter = () => {
     const [count, setCount] = React.useState(0);
+    useEffect (() => {
+        return (
+            <h1>Teste</h1>
+        );
+    }, [count])
 
     const handleIncrement = () => {
         setCount(count + 1);

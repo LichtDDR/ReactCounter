@@ -1,25 +1,34 @@
-import logo from './logo.svg';
 import './App.css';
 import Counter from './Counter';
+import User from './User';
 
+const credits = ["Mikael", "Vitor", "Bianca"];
 function App() {
+  const peopleInfo = [
+    {
+      firstName: "Mikael",
+      lastName: "Muniz",
+      age: "20"
+    }
+  ]
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-      <Counter />
+    <header className="App-header">
+    {
+      peopleInfo.map((user)=> {
+        return (
+          <User {...user} />
+        );
+      })}
+    <Counter />
+    {
+      credits.map((empregado) => {
+        return(
+          <h1> {empregado} </h1>
+        );
+      })
+    }
+    </header>
     </div>
   );
 }
