@@ -21,13 +21,6 @@ function App() {
         );
       })}
     <Counter />
-    {
-      credits.map((empregado) => {
-        return(
-          <h1> {empregado} </h1>
-        );
-      })
-    }
     </header>
     </div>
   );
